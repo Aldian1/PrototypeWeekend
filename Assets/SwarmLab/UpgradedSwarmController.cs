@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpgradedSwarmController : Singleton<UpgradedSwarmController>
 {
-
+    //http://answers.unity3d.com/questions/486023/disabling-collisions-between-nav-mesh-agents.html
     protected UpgradedSwarmController() { }
    
     private List<GameObject> swarmRef = new List<GameObject>();
@@ -47,7 +47,7 @@ public class UpgradedSwarmController : Singleton<UpgradedSwarmController>
     }
     public void AddToSwarm(GameObject swarmUnit)
     {
-        Debug.Log("Added unit");
+
         swarmRef.Add(swarmUnit);
     }
 

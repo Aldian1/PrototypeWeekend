@@ -19,14 +19,16 @@ MonoBehaviour:
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
-  m_String_keys: []
+  m_String_keys:
+  - pbVertexColorPrefs9
   m_Color_keys: []
   m_Material_keys: []
   m_Bool_values: 
   m_Int_values: 000000000000000001000000
   m_Float_values:
-  - 390
+  - 209
   - 0
-  m_String_values: []
+  m_String_values:
+  - RGBA(1.000, 0.364, 0.000, 1.000)
   m_Color_values: []
   m_Material_values: []
