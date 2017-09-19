@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Agent
   - Building
+  - DeadZone
   layers:
   - Default
   - TransparentFX

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class JumpPad : MonoBehaviour {
+    //https://docs.unity3d.com/Manual/nav-MixingComponents.html
+
     [SerializeField]
     private float airTime = .5F;
 	// Use this for initialization
@@ -13,7 +15,7 @@ public class JumpPad : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+	
 	}
 
     private void OnTriggerEnter(Collider collision)
@@ -27,15 +29,10 @@ public class JumpPad : MonoBehaviour {
 
     private IEnumerator MoveTargetUp(GameObject swarmUnit)
     {
-        yield return new WaitForSeconds(.25F);
-        float entryTime = Time.time;
-        swarmUnit.GetComponent<NavMeshAgent>().enabled = false;
-        while(Time.time < entryTime + airTime)
-        {
-            swarmUnit.transform.position = Vector3.up * Time.time;
-            yield return null;
-        }
-        swarmUnit.GetComponent<NavMeshAgent>().enabled = true;
+        yield return new WaitForSeconds(1);
+        GetComponent<Animator>().SetTrigger(0);
+        
+        
 
     }
 }

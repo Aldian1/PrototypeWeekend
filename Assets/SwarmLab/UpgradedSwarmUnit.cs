@@ -25,13 +25,32 @@ public class UpgradedSwarmUnit : MonoBehaviour
 
     }
 
-     private void ActivateUnit()
+    private void OnTriggerEnter(Collider other)
+    {
+        if("DeadZone".Equals(other.tag))
+        {
+            StartCoroutine(DeactivateUnit());
+        }
+    }
+
+    private void ActivateUnit()
     {
         UpgradedSwarmController.Instance.AddToSwarm(this.gameObject);
     }
     public void RemoveUnit()
     {
         UpgradedSwarmController.Instance.RemoveFromSwarm(this.gameObject);
-        Destroy(this.gameObject);
+        StartCoroutine(DeactivateUnit());
     }
-}
+
+    private IEnumerator DeactivateUnit()
+    {
+
+           Color targetColor = Color.black;
+
+            GetComponent<Renderer>().material.color = targetColor;
+            yield return null;
+        }
+       
+    }
+
